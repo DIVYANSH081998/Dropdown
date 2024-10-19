@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle & Save</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="bundle-title">Bundle & Save</div>
+
+    <div class="bundle-option" id="bundle1">
+        <label>
+            <input type="radio" name="bundle" value="1">
+            1 Pair - DKK 195.00 <span>50% OFF</span>
+        </label>
+        <div class="sizes-colors">
+            <select name="size1">
+                <option value="">Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="color1">
+                <option value="">Color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            <select name="size2">
+                <option value="">Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="color2">
+                <option value="">Color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bundle-option selected" id="bundle2">
+        <label>
+            <input type="radio" name="bundle" value="2" checked>
+            2 Pair - DKK 345.00 <span class="most-popular">Most Popular - 40% OFF</span>
+        </label>
+        <div class="sizes-colors">
+            <select name="size1">
+                <option value="">Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="color1">
+                <option value="">Color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+            <select name="size2">
+                <option value="">Size</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select name="color2">
+                <option value="">Color</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bundle-option" id="bundle3">
+        <label>
+            <input type="radio" name="bundle" value="3">
+            3 Pair - DKK 528.00 <span>60% OFF</span>
+        </label>
+    </div>
+
+    <div class="total">Total: DKK 360.00</div>
+
+    <button class="add-to-cart">+ Add to Cart</button>
+
+    <div class="powered-by">Powered by Pumper</div>
+</div>
+
+<script>
+    // Function to toggle sizes and colors visibility
+    document.querySelectorAll('input[name="bundle"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            // Hide all sizes-colors sections
+            document.querySelectorAll('.sizes-colors').forEach(function(sizesColors) {
+                sizesColors.style.display = 'none';
+            });
+
+            // Show the sizes-colors section for the selected bundle
+            var selectedBundle = this.closest('.bundle-option').querySelector('.sizes-colors');
+            if (selectedBundle) {
+                selectedBundle.style.display = 'block';
+            }
+        });
+    });
+
+    // Initially show the sizes-colors for the selected bundle
+    document.querySelector('input[name="bundle"]:checked')
+        .closest('.bundle-option')
+        .querySelector('.sizes-colors').style.display = 'block';
+</script>
+
+</body>
+</html>
