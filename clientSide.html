@@ -92,7 +92,7 @@
 </div>
 
 <script>
-    // Function to toggle sizes and colors visibility
+    
     document.querySelectorAll('input[name="bundle"]').forEach(function(radio) {
         radio.addEventListener('change', function() {
             // Hide all sizes-colors sections
@@ -100,7 +100,7 @@
                 sizesColors.style.display = 'none';
             });
 
-            // Show the sizes-colors section for the selected bundle
+        
             var selectedBundle = this.closest('.bundle-option').querySelector('.sizes-colors');
             if (selectedBundle) {
                 selectedBundle.style.display = 'block';
@@ -108,7 +108,6 @@
         });
     });
 
-    // Initially show the sizes-colors for the selected bundle
     document.querySelector('input[name="bundle"]:checked')
         .closest('.bundle-option')
         .querySelector('.sizes-colors').style.display = 'block';
